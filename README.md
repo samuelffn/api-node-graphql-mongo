@@ -24,7 +24,7 @@ Criando uma API simples Node em JS com o GraphQL.
     driver port.
 7) Quando precisar reiniciar a máquina será necessário levantar o Docker novamente:
     7.1- Listar todas as imagens: docker ps -a
-    7.2- docker start noma_da_imagem
+    7.2- docker start noma_da_imagem.
 
 ## Robo 3T  
 É um visualizador para dados do MongDB
