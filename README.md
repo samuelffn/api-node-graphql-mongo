@@ -1,37 +1,57 @@
 # api-node-graphql
 Criando uma API simples Node em JS com o GraphQL.  
+
+## nodemon  
+**npm install -D nodemon**  
+Dependência para ser utilizada apenas no ambiente de desenvolvimento.  
+Ela faz com que ao salvar alguma alteração o servidor faça a atualização semprecisar parar e executar novamente.  
+Utilização:  
+1) Acessa o package.json  
+2) Em scripts, cria uma nova propriedade informando o local onde está o server, no caso está em **src**.
+Criando o comando: **"dev": "nodemon src/server.js"**  
+3) No terminal executa a aplicação usando o comando: **npm run dev**  
+Obs.: O npm run serve para executar os comandos que estão em script  
+
+## mogoose  
+**npm install mongoose**  
+O mongoose é um ORM (Object Relacional Mapping) de bancos não relacionais.
+O ORM vai emcapsular a lógica das operações do banco de dados através do código. Sendo assim não será utilizada a linguagem do banco de dados e utilizará o JavaScript para realizar operações no banco.
   
 ## baixando e criando a imagem do mongodb utilizando o Docker
 1) Para instalação do docker: https://www.docker.com/  
 2) Verifica a versão do Docker instalado na máquina:  
-    Help: docker --help  
-    Mostrar só a versão: docker --version  
-    Mostra todos os detalhes: docker version  
-3) docker pull mongo  
-    docker pull: comando utilizado para baixar a imagem do mongodb
-4) docker rum --name mongodb -p 27017:27017 -d mongo  
+    Help: **docker --help**  
+    Mostrar só a versão: **docker --version**  
+    Mostra todos os detalhes: **docker version**  
+3) **docker pull mongo**  
+    docker pull: comando utilizado para baixar a imagem do mongodb. Se der erro de permissão use: **sudo**  
+4) **docker run --name mongodb -p 27017:27017 -d mongo**  
+    Se der erro de permissão use: **sudo**  
     --name: Será o nome do container dentro do meu sistema  
     -p:  Será a porta para redirecionamento  
     27017:27017: É um exemplo de redirecionamento das portas. Toda vez que acessar a porta 27017 da ninha máquina, ele 
     redirecionará para a porta 27017 do mongodb que está instalado dentro desse container.  
     -d: mongo: Preciso informar qual imagem vou utilizar para criar esse container. Utilizamos a imagem que baixamos no 
     passo 3, mongo.  
-5) Listar as imagens que estão ativas no momento: docker ps
+5) Listar as imagens que estão ativas no momento: **docker ps**
     Comando utilizado para listar as imagens do docker e todos os detakhes da mesma.
 6) Para testar o funcionamento do mongodb:
-    6.1- Abre o navegador e digita: localhost: 27017
-    6.2- Se tudo estiver bem, retornará algo do tipo: Its looks like you are trying to access MongoDB over HTTP on the native
-    driver port.
+    6.1- Abre o navegador e digita: **localhost:27017**
+    6.2- Se tudo estiver bem, retornará algo do tipo: **Its looks like you are trying to access MongoDB over HTTP on the native driver port**
 7) Quando precisar reiniciar a máquina será necessário levantar o Docker novamente:
-    7.1- Listar todas as imagens: docker ps -a
-    7.2- docker start noma_da_imagem.
+    7.1- Listar todas as imagens: **docker ps -a**
+    7.2- **docker start noma_da_imagem**  
 
 ## Robo 3T  
 É um visualizador para dados do MongDB
-Link: https://robomongo.org/download e escolhe a opção Robo 3T (formerly Robomongo)
-Cadastrando um banco:
+**Instalação**
+1) Link: https://robomongo.org/download e escolhe a opção Robo 3T (formerly Robomongo)
+2) Depois de fazer o download acessa a pasta **/home/user/Downloads/robo3t-1.3.1-linux-x86_64-7419c406/bin**
+3) Executa o **robo3t**
+
+**Cadastrando um banco**
 1) Clica em MongoDB Connections, em seguida em Create
-    Em Type: Direct COnnection
+    Em Type: Direct Connection
     Em Name: O nome que você quizer (Coloquei MongoDB-Docker)
     Em Address: Localhost
     Em porta: 27017 (é a default, que utilizamos na criação do container)
