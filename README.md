@@ -15,7 +15,13 @@ Obs.: O npm run serve para executar os comandos que estão em script
 ## mogoose  
 **npm install mongoose**  
 O mongoose é um ORM (Object Relacional Mapping) de bancos não relacionais.
-O ORM vai emcapsular a lógica das operações do banco de dados através do código. Sendo assim não será utilizada a linguagem do banco de dados e utilizará o JavaScript para realizar operações no banco.
+O ORM vai emcapsular a lógica das operações do banco de dados através do código. Sendo assim não será utilizada a linguagem do banco de dados e utilizará o JavaScript para realizar operações no banco.  
+Ao executar a aplicação pela primeira vez ela vai criar o banco de dados que foi definido em **src/server.js** com o nome **graphqlnode** dado em:  
+```
+mongoose.connect("mongodb://localhost:27017/graphqlnode", {
+    useNewUrlParser: true
+});
+```
   
 ## baixando e criando a imagem do mongodb utilizando o Docker
 1) Para instalação do docker: https://www.docker.com/  
