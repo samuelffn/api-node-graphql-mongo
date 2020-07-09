@@ -1,5 +1,5 @@
 # api-node-graphql
-Criando uma API simples Node em JS com o GraphQL.  
+Criando uma API simples Node em JS com o GraphQL e Mongo DB.  
 
 ## nodemon  
 **npm install -D nodemon**  
