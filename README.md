@@ -54,6 +54,28 @@ mongoose.connect("mongodb://localhost:27017/graphqlnode", {
     7.1- Listar todas as imagens: **docker ps -a**  
     7.2- **docker start mongo**  
 
+**Criando banco no container do mongo**  
+1) Entrando no container: **docker exec -it id_do_container bash**  
+    * Para não precisar digitar todo o ID, é possível digitar apenas os 4 primeiros dígitos do ID.  
+2) Observe que o terminal mudará para **#**  
+3) Entrando no shell do mongo: **mongo**  
+	3.1- Observe que o cursor mudará para: **>**  
+	3.2- Mostrar os bancos existentes: **show dbs**  
+	3.2.1- Resultado:  
+	```	
+        > show dbs  
+			admin  0.000GB  
+			config 0.000GB  
+			local  0.000GB  
+		>  
+    ```
+	3.3- Para criar o banco de dados: **use NOME_DO BANCO**  
+		Ex.: **use mongo-teste** ou **use cursoMongoDb** ou **teste**, etc...  
+	3.4- Para identificar em qual banco de dados está trabalhando: **db**  
+	3.5- Limpando os códigos digitados: **cls**  
+	3.6- Para sair do shell do mongo: **exit**  
+4) Saindo do shell do container: **exit**  
+
 ## Robo 3T  
 É um visualizador para dados do MongDB
 **Instalação**
@@ -61,8 +83,8 @@ mongoose.connect("mongodb://localhost:27017/graphqlnode", {
 2) Depois de fazer o download acessa a pasta **/home/user/Downloads/robo3t-1.3.1-linux-x86_64-7419c406/bin**
 3) Executa o **robo3t**
 
-**Cadastrando um banco usando o Robo 3T**
-1) Clica em MongoDB Connections, em seguida em Create
+**Criando um banco no mongo usando o Robo 3T**
+1) Clica em MongoDB Connections, em seguida em Create  
     Em Type: Direct Connection
     Em Name: O nome que você quizer (Coloquei MongoDB-Docker)
     Em Address: Localhost
